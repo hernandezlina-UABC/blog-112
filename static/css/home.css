@@ -1,0 +1,10 @@
+body{
+    color:black;
+    background-color: rgb(232, 200, 228) !important;
+}
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bolder;
+}
