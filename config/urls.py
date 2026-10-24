@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # "" for "/" by default
     path("", include("pages.urls")),
+    path("posts/", include("posts.urls")),
+    # localhost:8000/posts/???
 ]

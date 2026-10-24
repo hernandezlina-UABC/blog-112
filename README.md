@@ -18,3 +18,23 @@
 8. Adding misc files: .gitignore, README.md
 9. To generate the requirements.txt file:
     - Mac: pip3 freeze > requirements.txt# blog-112
+
+## Django Subcomands
+1. To create a django app:
+    -Mac: python3 manage.py startapp APP_NAME
+
+2. To verify if we have issues/errors:
+    Mac: python3 manage.py check
+
+3. To create an admin user:
+    Mac: python3 manage.py createsuperuser
+    this will ask you for a username, email, password and password confirmation
+
+4. To detect changes and create migrations files (MODELS):
+    - Both OS: python manage.py makemigrations
+
+5. To execute changes against the db:
+    - Both OS: python manage.py migrate
+
+6. To run the server:
+    - Both OS: python manage.py runserver
