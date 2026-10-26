@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Post Detail {{ single_post.id }}
+{% endblock %}
+
+{% block content %}
+    <h1>Post #{{ single_post.id }}</h1>
+    <h2>Title: {{ single_post.title }}</h2>
+    <h3>Subtitle: {{ single_post.subtitle }}</h3>
+    <span><strong>Author: {{single_post.author }}</strong> | </span>
+    <span><strong>Date: {{single_post.created_on }}</strong></span><br>
+    <hr>
+    <p>{{ single_post.body }}</p>
+    <br>
+
+    <a href="{% url 'post_edit' single_post.id %}" class="btn-solid theme-primary">Edit</a>
+    <a href="{% url 'post_delete' single_post.id %}" class="btn-solid theme-danger">Delete</a>
+{% endblock %}
