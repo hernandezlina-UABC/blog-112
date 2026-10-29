@@ -16,7 +16,7 @@ class PostListView(ListView): # GET Request -> List
     template_name = "postsTemplates/list.html"
     # models attribute let django know from wich model (table) we want to retrive the data
     model = Post
-    # contect_onject_name attribute allow us to change the variable name on how we call it inside of the template
+    # context_object_name attribute allow us to change the variable name on how we call it inside of the template
     context_object_name = "posts"
     
     # SELECT * FROM table;

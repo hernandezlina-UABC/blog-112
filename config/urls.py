@@ -22,5 +22,7 @@ urlpatterns = [
     # "" for "/" by default
     path("", include("pages.urls")),
     path("posts/", include("posts.urls")),
+    path("accounts/", include("accounts.urls")),
+
     # localhost:8000/posts/???
 ]

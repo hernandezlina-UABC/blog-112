@@ -23,9 +23,32 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
           </li>
+          
+
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <span class="badge badge-subtle theme-primary">{{ user.username }}</span>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'post_new' %}">Create Post</a>
           </li>
+          <li class="nav-item">
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <input type="submit" value="Log Out" class="nav-link">
+            </form>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+          </li>
+
+          {% endif %}
+
+          
         </ul>
       </div>
     </dialog>

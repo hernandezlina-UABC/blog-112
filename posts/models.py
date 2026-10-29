@@ -28,3 +28,12 @@ class Post(models.Model):
         # Automatically redirect the user to an specific endpoin
         return reverse("post_detail", args={self.id})
     
+    
+class Status(models.Model):
+    # unique= the name its supposed to be unique
+    name = models.CharField(max_length=128, unique=True) # Strings
+    description = models.CharField(max_length=200, help_text="Write a description about the Status") # Strings
+    
+    def __str__(self): # To String 
+            return f"{self.name}"
+    
