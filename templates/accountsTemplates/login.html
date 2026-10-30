@@ -11,4 +11,5 @@
         {{ form.as_p }}
         <input type="submit" value="Log In" class="btn-solid theme-success">
     </form>
+    <p> If you forgot your password <a href="{% url 'password_reset' %}">click here.</a></p>
 {% endblock %}

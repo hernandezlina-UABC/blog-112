@@ -10,7 +10,7 @@ class HomePageView(TemplateView): # Class Based Views - Inheritance (OOP)
         # kwargs is for when you want to...
         context =  super().get_context_data(**kwargs)
         print(context)
-        context['name'] = "Jeremy"
+        context['name'] = "Lina"
         print(context)
         return context
     
