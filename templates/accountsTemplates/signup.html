@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block title %}
     Sign Up
@@ -9,7 +11,7 @@
     <p>Create a new account!</p>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <input type="submit" value="Create" class="btn-solid theme-success">
     </form>
 {% endblock %}

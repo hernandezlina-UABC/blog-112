@@ -20,6 +20,10 @@ class Post(models.Model):
         User,
         on_delete=models.CASCADE
     )
+    status = models.ForeignKey(
+        "Status",
+        on_delete=models.DO_NOTHING
+    )
     
     def __str__(self): # To String -> "Hello World by admin"
         return f"{self.title} by {self.author}"

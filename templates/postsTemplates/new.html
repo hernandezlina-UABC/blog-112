@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block title %}
-    Cretae New Post
+    Create New Post
 {% endblock %}
 
 {% block content %}
     <h1>Create New Post</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <input type="submit" value="Create" class="btn-solid theme-success">
     </form>
 {% endblock %}

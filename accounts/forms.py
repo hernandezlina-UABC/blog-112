@@ -10,7 +10,8 @@ class SignUpForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2"]
         
     def clean_email(self):
-        email = self.cleaned_data.get("email")
+        email = self.cleaned_data.get("email") # admin@admin.com
         if User.objects.filter(email__iexact=email).exists():
             raise forms.ValidationError("A user with that email already exists!")
         return email
+    
