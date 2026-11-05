@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block title %}
     Post Detail {{ single_post.id }}
@@ -9,10 +11,43 @@
     <h2>Title: {{ single_post.title }}</h2>
     <h3>Subtitle: {{ single_post.subtitle }}</h3>
     <span><strong>Author: {{single_post.author }}</strong> | </span>
-    <span><strong>Date: {{single_post.created_on }} | Status: {{ single_post.status }}</strong></span><br>
+    <span><strong>Date: {{single_post.created_on }}</strong> | </span>
+    Status: {{ single_post.status }}</strong></span><br>
     <hr>
     <p>{{ single_post.body }}</p>
     <br>
+
+    <!-- comment, author, date created -->
+    {% if user == single_post.author %}
+        <a href="{% url 'post_edit' single_post.id %}" class="btn-solid theme-primary">Edit</a>
+        <a href="{% url 'post_delete' single_post.id %}" class="btn-solid theme-danger">Delete</a>
+    {% endif %}
+
+    <hr>
+    <h3>Comments {{ comments.count }}</h3>
+    {% for comment in comments %}
+    <div class="mb-3">
+        <strong>{{ comment.author }}</strong>
+        <small>{{ comment.created_on }}</small>
+        <p>{{ comment.body }}</p>
+    </div>
+    {% empty %}
+        <p>No comments yet. Be the first to comment!</p>
+    {% endfor %}
+
+    <hr>
+    {% if user.is_authenticated %}
+        <h4>Add a Comment</h4>
+        <!-- FORM -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <!-- input and button -->
+            <input type="submit" value="Post Comment" class="btn-solid theme-success">
+        </form>
+    {% endif %}
+
+
 
     {% if user == single_post.author %}
         <a href="{% url 'post_edit' single_post.id %}" class="btn-solid theme-primary">Edit</a>

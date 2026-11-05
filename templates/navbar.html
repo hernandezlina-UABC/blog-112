@@ -30,6 +30,12 @@
             <span class="badge badge-subtle theme-primary">{{ user.username }}</span>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'post_drafts' %}">My Drafts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'post_archived' %}">My Archived</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'post_new' %}">Create Post</a>
           </li>
           <li class="nav-item">
