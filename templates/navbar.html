@@ -1,6 +1,8 @@
 <nav class="navbar sm:navbar-expand bg-1 fg-2">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">Navbar</a>
+    <a class="navbar-brand py-0" href="{% url 'home' %}">
+      <img src="/static/images/logo.png" alt="Logo" height="40" class="d-block" style="width: auto; max-height: 40px;">
+    </a>
     <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" aria-hidden="true"></span>
     </button>
@@ -56,7 +58,7 @@
             <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
           </li>
 
-          {% endif %}
+        {% endif %}
 
           
         </ul>

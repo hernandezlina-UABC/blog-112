@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
 
 {% block title %}
     Contact page
 {% endblock %}
 
 {% block content %}
-    <h1>Contact Page </h1>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ipsam illo eum delectus vel libero saepe pariatur numquam voluptatibus hic officia cumque sed tempora necessitatibus nihil, iure veniam provident facere!</p>
+    <h1>Let's Connect (Or Just Say Hi)</h1>
+    <p>Are you actually reading this? If so, congratulations—you've found the contact page! Whether you want to share your own disastrous DIY stories, tell me my AI predictions are completely wrong, or just prove to my teacher that real humans are visiting this school project, I’d love to hear from you</p>
     <p>Name: {{ name }}</p>
     <p>Address: {{ address }}</p>
     <p>Email: {{ email }}</p>
